@@ -4,6 +4,8 @@ services:
     build: .
     ports:
       - '3000:3000'
+    networks:
+      - default-network
   postgres:
     image: postgres
     restart: always
@@ -11,6 +13,8 @@ services:
       - '5432'
     ports:
       - '5432:5432'
+    networks:
+      - default-network
     environment:
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: admin
